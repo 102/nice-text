@@ -1,4 +1,14 @@
+.app {
+  display: flex;
+  flex-direction: column;
+}
+
 .app .output {
   white-space: pre-wrap;
   word-break: break-word;
+}
+
+button.reset {
+  margin-top: 1rem;
+  width: 2rem;
 }

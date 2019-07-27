@@ -2,6 +2,7 @@ import "./index.css";
 
 const output = document.querySelector(".app .output");
 const input = document.querySelector(".app .input");
+const reset = document.querySelector(".app .reset");
 
 const suffixes = ["opf", "scr", "fr"];
 
@@ -19,8 +20,14 @@ const updateOutput = value => {
   output.innerHTML = transform(value);
 };
 
-const handleChange = event => updateOutput(event.target.value);
-
-input.addEventListener("input", handleChange);
-
 updateOutput(input.value);
+
+const handleInput = event => updateOutput(event.target.value);
+
+const handleReset = () => {
+  input.value = "";
+  updateOutput("");
+};
+
+input.addEventListener("input", handleInput);
+reset.addEventListener("click", handleReset);
